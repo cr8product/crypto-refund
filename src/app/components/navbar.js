@@ -11,9 +11,11 @@ export default function Navbar() {
             </div>
             <div className="flex-none">
                 <ul className="menu menu-horizontal px-1">
+                    <a className="btn btn-blue">Contact us</a>
                     <Web3Button>Connect Wallet</Web3Button>
                 </ul>
             </div>
+
         </div>
     )
 }
