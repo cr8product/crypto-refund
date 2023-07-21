@@ -2,13 +2,14 @@ import { Chathura } from "next/font/google";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import Chat from "../components/chat";
+import Navbar2 from "../components/navbar2";
 
 
 
 export default function Support() {
     return (
 <div>
-<Navbar/>
+<Navbar2 title="Contact Us"/>
 <Chat/>
 <Footer/>
 

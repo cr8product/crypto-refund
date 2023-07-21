@@ -2,6 +2,7 @@ import Card from "./components/card";
 import Footer from "./components/footer";
 import Hero from "./components/hero";
 import Navbar from "./components/navbar";
+import Navbar2 from "./components/navbar2";
 
 export default function Home() {
   return (
