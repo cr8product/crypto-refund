@@ -1,3 +1,6 @@
+"use client"
+
+import {Web3Button} from "@web3modal/react";
 
 
 export default function Navbar() {
@@ -8,7 +11,7 @@ export default function Navbar() {
             </div>
             <div className="flex-none">
                 <ul className="menu menu-horizontal px-1">
-                    <button className="btn btn-active btn-primary">Connect Wallet</button>
+                    <Web3Button>Connect Wallet</Web3Button>
                 </ul>
             </div>
         </div>
