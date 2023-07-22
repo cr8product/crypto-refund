@@ -1,23 +1,33 @@
+'use client'
 import { ethers } from "ethers";
+import contractArtifact from "../../../artifacts/contracts/Greeter.sol/Greeter.json"
+import React from "react";
 
-const provider = new ethers.JsonRpcProvider("https://linea-goerli.infura.io/v3/45cb05f851444a51bfd995aef63494d9")
+export default function smartContractInteractions() {
+    const deployedContract = "0x085E82226a3709105883aA0fa2680279Db13B46f";
+    const provider = new ethers.JsonRpcProvider(`https://goerli.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_KEY}`)
+    
+    const readContract = new ethers.Contract(deployedContract, contractArtifact.abi, provider);
+    const signer = new ethers.Wallet(process.env.NEXT_PUBLIC_PRIVATE_KEY, provider);
+    const writeContract = new ethers.Contract(deployedContract, contractArtifact.abi, signer);
 
-
-//const contract = new ethers.Contract(
-//    "0xdf2a89FbEdcf9462b7E10413Ee6eA28e8106937d", 
-//    [ { "inputs": [], "stateMutability": "nonpayable", "type": "constructor" }, { "inputs": [ { "internalType": "address", "name": "", "type": "address" } ], "name": "balances", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "decimals", "outputs": [ { "internalType": "uint8", "name": "", "type": "uint8" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "getTaxRate", "outputs": [ { "internalType": "uint8", "name": "", "type": "uint8" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "greet", "outputs": [ { "internalType": "string", "name": "", "type": "string" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "name", "outputs": [ { "internalType": "string", "name": "", "type": "string" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "owner", "outputs": [ { "internalType": "address", "name": "", "type": "address" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "symbol", "outputs": [ { "internalType": "string", "name": "", "type": "string" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "taxRate", "outputs": [ { "internalType": "uint8", "name": "", "type": "uint8" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "totalSupply", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "recipient", "type": "address" }, { "internalType": "uint256", "name": "amount", "type": "uint256" } ], "name": "transfer", "outputs": [], "stateMutability": "nonpayable", "type": "function" } ],
-//    provider
-//)
-
-const contr = new ethers.Contract(
-    "0x1E2d4f81B3fa74Bae8F65587f91D31C818393cfe",
-    [ { "inputs": [ { "internalType": "string", "name": "_greeting", "type": "string" } ], "stateMutability": "nonpayable", "type": "constructor" }, { "inputs": [], "name": "greet", "outputs": [ { "internalType": "string", "name": "", "type": "string" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "string", "name": "_greeting", "type": "string" } ], "name": "setGreeting", "outputs": [], "stateMutability": "nonpayable", "type": "function" } ],
-    provider
-)
-
-export default async function getGreeting() {
-    console.log(provider)
-    const taxPrice = await contr.greet();
-    console.log(taxPrice)
-    return(<h1>Tax rate: {taxPrice}</h1>)
+    const [value, setValue] = React.useState("empty")
+    
+    async function retrieveTx() {
+        const greeting = await readContract.greeting();
+        setValue(greeting);
+    }
+        
+    async function submitTx() {
+        const tx = await writeContract.setGreeting("This is 6");
+        alert("Transaction submitted: ", tx.hash);
+    }
+        
+    return(
+    <div>
+        <h1>Tax rate: {value}</h1>
+        <button className="btn" onClick={retrieveTx}>Retrieve</button>
+        <button className="btn btn-warning" onClick={submitTx}>Submit</button>
+    </div>
+    )
 }
