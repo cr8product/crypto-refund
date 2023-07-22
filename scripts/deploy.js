@@ -6,7 +6,7 @@ async function main() {
   console.log("Deploying contracts with the account:", deployer.address);
 
   const Greeter = await ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.deploy("Hello my first deploy");
+  const greeter = await Greeter.deploy("Hello my first Linea deploy");
   //await greeter.deployed();
 
   console.log("Greeter deployed to:", await greeter.getAddress());

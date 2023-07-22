@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 
-const provider = new ethers.JsonRpcProvider("https://goerli.infura.io/v3/45cb05f851444a51bfd995aef63494d9")
+const provider = new ethers.JsonRpcProvider("https://linea-goerli.infura.io/v3/45cb05f851444a51bfd995aef63494d9")
 
 
 //const contract = new ethers.Contract(
@@ -10,7 +10,7 @@ const provider = new ethers.JsonRpcProvider("https://goerli.infura.io/v3/45cb05f
 //)
 
 const contr = new ethers.Contract(
-    "0x37A357862a124f2e0313022366d41103d675C3ba",
+    "0x1E2d4f81B3fa74Bae8F65587f91D31C818393cfe",
     [ { "inputs": [ { "internalType": "string", "name": "_greeting", "type": "string" } ], "stateMutability": "nonpayable", "type": "constructor" }, { "inputs": [], "name": "greet", "outputs": [ { "internalType": "string", "name": "", "type": "string" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "string", "name": "_greeting", "type": "string" } ], "name": "setGreeting", "outputs": [], "stateMutability": "nonpayable", "type": "function" } ],
     provider
 )
