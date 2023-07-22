@@ -1,115 +1,160 @@
+import {string} from "hardhat/internal/core/params/argumentTypes";
 
 
 export default function Table(){
+
+  const prettyAddress = (text) => {
+    return text.substring(0,4) + "..." + text.substring(text.length-5,text.length);
+  }
+
+  const currencyFormat = (num) => {
+    return '$ '+num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+  }
+
+  const showStatus = (statusCode) => {
+    switch (statusCode) {
+      case 1 :
+        return (<div className="badge badge-neutral">In Progress</div>);
+        break;
+      case 2:
+        return (<div className="badge badge-accent">Completed</div>);
+        break;
+      case 3:
+        return (<div className="badge badge-secondary">Rejected</div>);
+        break;
+      default:
+        return (<div className="badge badge-neutral">Unknow</div>);
+
+    }
+  }
+
+  const listData = [
+    {
+      transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      receiptId:"1234567",
+      status:1,
+      address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      amount:162.50,
+      tax:18
+    },
+    {
+      transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      receiptId:"1234567",
+      status:2,
+      address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      amount:267,
+      tax:18
+    },
+    {
+      transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      receiptId:"1234567",
+      status:3,
+      address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      amount:480.30,
+      tax:18
+    },
+    {
+      transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      receiptId:"1234567",
+      status:4,
+      address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      amount:380.10,
+      tax:18
+    },
+    {
+      transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      receiptId:"1234567",
+      status:1,
+      address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      amount:179.50,
+      tax:18
+    },
+    {
+      transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      receiptId:"1234567",
+      status:2,
+      address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      amount:215,
+      tax:18
+    },
+    {
+      transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      receiptId:"1234567",
+      status:3,
+      address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      amount:4105.10,
+      tax:18
+    },
+    {
+      transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      receiptId:"1234567",
+      status:4,
+      address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      amount:5600.80,
+      tax:18
+    },
+    {
+      transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      receiptId:"1234567",
+      status:1,
+      address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      amount:70.0,
+      tax:18
+    },
+    {
+      transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      receiptId:"1234567",
+      status:2,
+      address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      amount:1500.60,
+      tax:18
+    },
+    {
+      transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      receiptId:"1234567",
+      status:3,
+      address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      amount:1005.08,
+      tax:18
+    },
+    {
+      transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      receiptId:"1234567",
+      status:4,
+      address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
+      amount:300.10,
+      tax:18
+    }
+  ];
+
     return(
 
         <div className="overflow-x-auto">
-  <table className="table table-xs border-separate border-spacing-2 bg-800">
+  <table className="table table-zebra table-xs">
     <thead>
       <tr>
-        <th></th> 
-        <th>Transaction Hash</th> 
-        <th>Receipt Document ID</th> 
-        <th>Status</th> 
-        <th>Shop Address</th> 
-        <th>My Address</th> 
+        <th></th>
+        <th>Transaction Hash</th>
+        <th>Receipt Document ID</th>
+        <th>Status</th>
+        <th>Shop Address</th>
         <th>Value</th>
         <th>Tax</th>
       </tr>
-    </thead> 
+    </thead>
     <tbody>
-      <tr>
-        <th>1</th> 
-        <td>Cy Ganderton</td> 
-        <td>Quality Control Specialist</td> 
-        <td>Littel, Schaden and Vandervort</td> 
-        <td>Canada</td> 
-        <td>12/16/2020</td> 
-        <td>Blue</td>
-      </tr>
-      <tr>
-        <th>2</th> 
-        <td>Hart Hagerty</td> 
-        <td>Desktop Support Technician</td> 
-        <td>Zemlak, Daniel and Leannon</td> 
-        <td>United States</td> 
-        <td>12/5/2020</td> 
-        <td>Purple</td>
-      </tr>
-      <tr>
-        <th>3</th> 
-        <td>Brice Swyre</td> 
-        <td>Tax Accountant</td> 
-        <td>Carroll Group</td> 
-        <td>China</td> 
-        <td>8/15/2020</td> 
-        <td>Red</td>
-      </tr>
-      <tr>
-        <th>4</th> 
-        <td>Marjy Ferencz</td> 
-        <td>Office Assistant I</td> 
-        <td>Rowe-Schoen</td> 
-        <td>Russia</td> 
-        <td>3/25/2021</td> 
-        <td>Crimson</td>
-      </tr>
-      <tr>
-        <th>5</th> 
-        <td>Yancy Tear</td> 
-        <td>Community Outreach Specialist</td> 
-        <td>Wyman-Ledner</td> 
-        <td>Brazil</td> 
-        <td>5/22/2020</td> 
-        <td>Indigo</td>
-      </tr>
-      <tr>
-        <th>6</th> 
-        <td>Irma Vasilik</td> 
-        <td>Editor</td> 
-        <td>Wiza, Bins and Emard</td> 
-        <td>Venezuela</td> 
-        <td>12/8/2020</td> 
-        <td>Purple</td>
-      </tr>
-      <tr>
-        <th>7</th> 
-        <td>Meghann Durtnal</td> 
-        <td>Staff Accountant IV</td> 
-        <td>Schuster-Schimmel</td> 
-        <td>Philippines</td> 
-        <td>2/17/2021</td> 
-        <td>Yellow</td>
-      </tr>
-      <tr>
-        <th>8</th> 
-        <td>Sammy Seston</td> 
-        <td>Accountant I</td> 
-        <td>O'Hara, Welch and Keebler</td> 
-        <td>Indonesia</td> 
-        <td>5/23/2020</td> 
-        <td>Crimson</td>
-      </tr>
-      <tr>
-        <th>9</th> 
-        <td>Lesya Tinham</td> 
-        <td>Safety Technician IV</td> 
-        <td>Turner-Kuhlman</td> 
-        <td>Philippines</td> 
-        <td>2/21/2021</td> 
-        <td>Maroon</td>
-      </tr>
-      <tr>
-        <th>10</th> 
-        <td>Zaneta Tewkesbury</td> 
-        <td>VP Marketing</td> 
-        <td>Sauer LLC</td> 
-        <td>Chad</td> 
-        <td>6/23/2020</td> 
-        <td>Green</td>
-      </tr>
-     
-    </tbody> 
+      {listData.map((d,index) => (
+          <tr>
+            <td>{index+1}</td>
+            <td title={d.transaction}>{prettyAddress(d.transaction)}</td>
+            <td>{d.receiptId}</td>
+            <td>{showStatus(d.status)}</td>
+            <td title={d.address}>{prettyAddress(d.address)}</td>
+            <td>{currencyFormat(d.amount)}</td>
+            <td>{d.tax.toFixed(2)}</td>
+          </tr>
+      ))}
+    </tbody>
     <tfoot>
     </tfoot>
   </table>
