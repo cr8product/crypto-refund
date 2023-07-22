@@ -1,6 +1,7 @@
 import { ethers } from "ethers";
+import contractArtifact from "../../../artifacts/contracts/Greeter.sol/Greeter.json"
 
-const provider = new ethers.JsonRpcProvider("https://linea-goerli.infura.io/v3/45cb05f851444a51bfd995aef63494d9")
+const provider = new ethers.JsonRpcProvider("https://goerli.infura.io/v3/45cb05f851444a51bfd995aef63494d9")
 
 
 //const contract = new ethers.Contract(
@@ -10,8 +11,8 @@ const provider = new ethers.JsonRpcProvider("https://linea-goerli.infura.io/v3/4
 //)
 
 const contr = new ethers.Contract(
-    "0x1E2d4f81B3fa74Bae8F65587f91D31C818393cfe",
-    [ { "inputs": [ { "internalType": "string", "name": "_greeting", "type": "string" } ], "stateMutability": "nonpayable", "type": "constructor" }, { "inputs": [], "name": "greet", "outputs": [ { "internalType": "string", "name": "", "type": "string" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "string", "name": "_greeting", "type": "string" } ], "name": "setGreeting", "outputs": [], "stateMutability": "nonpayable", "type": "function" } ],
+    "0x8Bbdb6e1d9D1dFf0c24155e21035c6BFb7bc2918",
+    contractArtifact.abi,
     provider
 )
 
