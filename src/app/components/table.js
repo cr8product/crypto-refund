@@ -31,7 +31,7 @@ export default function Table(){
   const listData = [
     {
       transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
-      receiptId:"1234567",
+      receiptId:"DOC1000001",
       status:1,
       address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
       amount:162.50,
@@ -39,7 +39,7 @@ export default function Table(){
     },
     {
       transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
-      receiptId:"1234567",
+      receiptId:"DOC1000002",
       status:2,
       address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
       amount:267,
@@ -47,7 +47,7 @@ export default function Table(){
     },
     {
       transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
-      receiptId:"1234567",
+      receiptId:"DOC1000003",
       status:3,
       address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
       amount:480.30,
@@ -55,7 +55,7 @@ export default function Table(){
     },
     {
       transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
-      receiptId:"1234567",
+      receiptId:"DOC1000004",
       status:4,
       address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
       amount:380.10,
@@ -63,7 +63,7 @@ export default function Table(){
     },
     {
       transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
-      receiptId:"1234567",
+      receiptId:"DOC1000005",
       status:1,
       address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
       amount:179.50,
@@ -71,7 +71,7 @@ export default function Table(){
     },
     {
       transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
-      receiptId:"1234567",
+      receiptId:"DOC1000006",
       status:2,
       address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
       amount:215,
@@ -79,7 +79,7 @@ export default function Table(){
     },
     {
       transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
-      receiptId:"1234567",
+      receiptId:"DOC1000007",
       status:3,
       address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
       amount:4105.10,
@@ -87,7 +87,7 @@ export default function Table(){
     },
     {
       transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
-      receiptId:"1234567",
+      receiptId:"DOC1000008",
       status:4,
       address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
       amount:5600.80,
@@ -95,7 +95,7 @@ export default function Table(){
     },
     {
       transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
-      receiptId:"1234567",
+      receiptId:"DOC1000009",
       status:1,
       address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
       amount:70.0,
@@ -103,7 +103,7 @@ export default function Table(){
     },
     {
       transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
-      receiptId:"1234567",
+      receiptId:"DOC1000010",
       status:2,
       address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
       amount:1500.60,
@@ -111,7 +111,7 @@ export default function Table(){
     },
     {
       transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
-      receiptId:"1234567",
+      receiptId:"DOC1000011",
       status:3,
       address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
       amount:1005.08,
@@ -119,7 +119,7 @@ export default function Table(){
     },
     {
       transaction:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
-      receiptId:"1234567",
+      receiptId:"DOC1000012",
       status:4,
       address:"0x5d3f9f0b64e8b709ec0cf0a92d8eb6c02ca9d1ba5a5850186754f3cb49606fd1",
       amount:300.10,
