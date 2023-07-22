@@ -20,6 +20,10 @@ module.exports = {
       url: `https://goerli.infura.io/v3/${INFURA_KEY}`,
       accounts: [PRIVATE_KEY]
     },
+    zkEVM: {
+      url: `https://rpc.public.zkevm-test.net`,
+      accounts: [NEXT_PUBLIC_PRIVATE_KEY],
+      },
   }
 };
 
