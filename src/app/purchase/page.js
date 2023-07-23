@@ -4,6 +4,7 @@ import Table from "../components/table";
 
 
 export default function Purchase(){
+
     return(
 
         <div>
