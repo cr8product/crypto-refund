@@ -11,6 +11,10 @@ export default function Support() {
 <div>
 <Navbar2 title="Contact Us"/>
 <Chat/>
+<div className="grid h-20 rounded-box place-items-center"></div>
+<div className="grid h-20 rounded-box place-items-center"></div>
+<div className="grid h-20 rounded-box place-items-center"></div>
+<div className="grid h-20 rounded-box place-items-center"></div>
 <Footer/>
 
 </div>
