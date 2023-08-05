@@ -8,7 +8,7 @@ export default function Navbar2(props) {
         <div>
 
             <div className="navbar bg-base-100">
-                <a className="btn btn-ghost normal-case text-xl">{props.title}</a>
+                <a href= "http://localhost:3000/" className="btn btn-ghost normal-case text-xl">{props.title}</a>
             </div>
 
             <div className="absolute top-1 right-0">
